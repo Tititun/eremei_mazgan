@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mazgan',
     'parler',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [

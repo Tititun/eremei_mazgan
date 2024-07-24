@@ -1,2 +1,4 @@
 django
 django-parler
+django-phonenumber-field
+phonenumbers
