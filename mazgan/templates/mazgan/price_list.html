@@ -3,14 +3,29 @@
 {% load static %}
 
 {% block title %}
-{% trans "Eremei mazgan" %}
+{% trans "Price list" %}
 {% endblock title %}
 
 {% block path %}/price_list{% endblock %}
 
 {% block content %}
-{% for service in services %}
-  <p>{{ service.name }}</p>
-{% endfor %}
+<div class="row">
+  <div class="col-1 col-lg-3"></div>
+
+  <div class="col-10 col-lg-6 d-flex flex-column flex-lg-row">
+    {% for service in services %}
+      <div class="card m-4" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ service.name }}</h5>
+          <p class="card-text">{{ service.description }}</p>
+          <p class="card-text">{{ service.price_field }}</p>
+          <a href="#" class="btn btn-primary">Contact us</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="col-1 col-lg-3"></div>
+</div>
 {% endblock content %}
 
