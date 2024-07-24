@@ -1,3 +1,7 @@
 from django.contrib import admin
+from parler.admin import TranslatableAdmin
+from .models import Service
 
-# Register your models here.
+@admin.register(Service)
+class ServiceAdmin(TranslatableAdmin):
+    list_display = ['name']
