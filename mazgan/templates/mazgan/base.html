@@ -35,8 +35,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav flex-grow-1 justify-content-around">
-            <a class="nav-link" href="#">Price list</a>
-            <a class="nav-link" href="#">Photos</a>
+            <a class="nav-link text-center {% if current_page == "home" %}active{% endif %}" href="{% url "mazgan:main" %}">Home</a>
+            <a class="nav-link text-center {% if current_page == "price_list" %}active{% endif %}" href="{% url "mazgan:price_list" %}">Price list</a>
+            <a class="nav-link text-center" href="#">Photos</a>
           </div>
         </div>
       </div>

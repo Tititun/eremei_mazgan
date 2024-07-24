@@ -1,0 +1,16 @@
+{% extends "mazgan/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+{% trans "Eremei mazgan" %}
+{% endblock title %}
+
+{% block path %}/price_list{% endblock %}
+
+{% block content %}
+{% for service in services %}
+  <p>{{ service.name }}</p>
+{% endfor %}
+{% endblock content %}
+
