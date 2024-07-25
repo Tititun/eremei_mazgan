@@ -16,9 +16,25 @@
 
     <div class="col-10 col-lg-6 d-flex flex-column flex-lg-row">
       <form method="POST" action="{% url "mazgan:main" %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="button" class="btn btn-primary">{% trans "Submit" %}</button>
+        {{ form.non_field_errors }}
+        <div class="mb-3">
+          {{ form.email.errors }}
+          <label class="form-label me-auto" for="{{ form.email.id_for_label }}">{% trans "Your email" %}:</label>
+          {{ form.email }}
+        </div>
+        <div class="mb-3">
+          {{ form.phone.errors }}
+          <label class="form-label me-auto" for="{{ form.phone.id_for_label }}">{% trans "Phone number" %}:</label>
+          {{ form.phone }}
+        </div>
+        <div class="mb-3">
+          {{ form.text.errors }}
+          <label class="form-label me-auto" for="{{ form.text.id_for_label }}">{% trans "Describe your issue" %}:</label>
+          {{ form.text }}
+        </div>
+        <div class="d-flex flex-column">
+          <button type="submit" class="btn btn-secondary align-self-center"><img width="50" src="{% static "mazgan/images/mazgan.svg" %}"></button>
+        </div>
       </form>
     </div>
 
