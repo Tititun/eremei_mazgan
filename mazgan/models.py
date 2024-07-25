@@ -34,3 +34,15 @@ class Bid(TranslatableModel):
     email = models.EmailField(null=True, blank=True)
     phone = PhoneNumberField(null=True, blank=True)
     
+
+class PhotoGroup(TranslatableModel):
+    translations = TranslatedFields(
+        description = models.TextField(null=True, blank=True)
+    )
+
+class Photo(TranslatableModel):
+    translations = TranslatedFields(
+        description = models.TextField(null=True, blank=True)
+    )
+    group = models.ForeignKey(PhotoGroup, on_delete=models.CASCADE, null=False)
+    image = models.ImageField(upload_to='photos', blank=False, null=False)
