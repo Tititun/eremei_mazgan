@@ -39,6 +39,8 @@ class PhotoGroup(TranslatableModel):
     translations = TranslatedFields(
         description = models.TextField(null=True, blank=True)
     )
+    def __str__(self):
+        return self.description if self.description else f'Group {self.pk}'
 
 class Photo(TranslatableModel):
     translations = TranslatedFields(
